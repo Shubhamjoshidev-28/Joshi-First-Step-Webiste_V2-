@@ -1,0 +1,25 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Announcements | Joshi’s First Step
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/announcements.css' %}">
+<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="announcements-list" id="announcementsList">
+  <p class="loading">Loading announcements...</p>
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/announcements.js' %}"></script>
+{% endblock %}

@@ -1,0 +1,310 @@
+/* ===== PAGE BACKGROUND ===== */
+body {
+    background: rgba(20, 20, 20, 0.877); 
+    margin: 0;
+    padding: 0;
+}
+
+html {
+    margin: 0;
+    padding: 0;
+}
+
+/* ===== CENTER CONTAINER ===== */
+.form-box {
+    width: 320px;
+    margin: 60px auto;
+    background: #1b1f23;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+}
+
+/* ===== PROFILE IMAGE ===== */
+.form-box img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    border: 3px solid black;
+    object-fit: cover;
+    margin-bottom: 20px;
+}
+
+/* ===== TEXT INFO ===== */
+.form-box p {
+    text-align: left;
+    margin: 6px 0;
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+}
+h2{
+    color: white;
+}
+/* ===== BUTTON CONTAINER ===== */
+.fees-button,
+.edit-button,
+.logout {
+    display: inline-block;
+    margin-top: 15px;
+}
+
+.profile-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8px;
+    flex-wrap: nowrap;
+    margin: 8px auto 20px;
+    max-width: 520px;
+}
+
+.profile-buttons .fees-button,
+.profile-buttons .edit-button,
+.profile-buttons .logout {
+    margin-top: 0;
+}
+
+.fees-button a,
+.fees-button a:link,
+.fees-button a:visited,
+.edit-button a,
+.edit-button a:link,
+.edit-button a:visited,
+.logout a,
+.logout a:link,
+.logout a:visited {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.2s ease-in;
+    position: relative;
+    overflow: hidden;
+    z-index: 1;
+    color: #df5110 !important;
+    padding: 0.7em 1.7em;
+    cursor: pointer;
+    font-size: 12px;
+    font-weight: bold;
+    margin: 10px 8px;
+    border-radius: 0.5em;
+    background: #e8e8e8 !important;
+    border: 1px solid #e8e8e8;
+    box-shadow: 1px 1px 4px #747474, -1px -1px 4px #ffffff;
+    text-decoration: none !important;
+    text-align: center;
+    min-width: 160px;
+}
+
+.profile-buttons .fees-button a,
+.profile-buttons .fees-button a:link,
+.profile-buttons .fees-button a:visited,
+.profile-buttons .edit-button a,
+.profile-buttons .edit-button a:link,
+.profile-buttons .edit-button a:visited,
+.profile-buttons .logout a,
+.profile-buttons .logout a:link,
+.profile-buttons .logout a:visited {
+    min-width: 0;
+    font-size: 11px;
+    margin: 6px 4px;
+    padding: 0.7em 1em;
+}
+
+.fees-button a:hover,
+.fees-button a:focus,
+.fees-button a:active,
+.edit-button a:hover,
+.edit-button a:focus,
+.edit-button a:active,
+.logout a:hover,
+.logout a:focus,
+.logout a:active {
+    text-decoration: none !important;
+}
+
+.fees-button a:active,
+.edit-button a:active,
+.logout a:active {
+    color: #666;
+    box-shadow: inset 1px 1px 4px #747474, inset -1px -1px 4px #ffffff;
+}
+
+.fees-button a:before,
+.edit-button a:before,
+.logout a:before {
+    content: "";
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.25);
+    top: 100%;
+    width: 140%;
+    height: 180%;
+    background-color: rgba(0, 0, 0, 0.05);
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.fees-button a:after,
+.edit-button a:after,
+.logout a:after {
+    content: "";
+    position: absolute;
+    left: 55%;
+    transform: translateX(-50%) scaleY(1) scaleX(1.45);
+    top: 180%;
+    width: 160%;
+    height: 190%;
+    background-color: #d87b50;
+    border-radius: 50%;
+    display: block;
+    transition: all 0.5s 0.1s cubic-bezier(0.55, 0, 0.1, 1);
+    z-index: -1;
+}
+
+.fees-button a:hover,
+.edit-button a:hover,
+.logout a:hover {
+    color: #ffffff !important;
+    border: 1px solid #d87b50;
+}
+
+.fees-button a:hover:before,
+.edit-button a:hover:before,
+.logout a:hover:before {
+    top: -35%;
+    background-color: #d87b50;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.fees-button a:hover:after,
+.edit-button a:hover:after,
+.logout a:hover:after {
+    top: -45%;
+    background-color: #d87b50;
+    transform: translateX(-50%) scaleY(1.3) scaleX(0.8);
+}
+
+.edit-profile-box {
+    width: 360px;
+}
+
+.profile-form {
+    text-align: left;
+}
+
+.profile-form label {
+    display: block;
+    margin-top: 12px;
+    margin-bottom: 6px;
+    color: white;
+    font-weight: 600;
+}
+
+.profile-form input {
+    width: 100%;
+    padding: 10px;
+    border-radius: 8px;
+    border: 1px solid rgba(255, 255, 255, 0.12);
+    background: #f3f3f3;
+    box-sizing: border-box;
+}
+
+.profile-actions {
+    display: flex;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+.profile-actions button,
+.profile-actions .cancel-btn {
+    flex: 1;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 12px 16px;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+}
+
+.profile-actions button {
+    background: black;
+    color: white;
+}
+
+.profile-actions .cancel-btn {
+    background: #444;
+    color: white;
+}
+
+.profile-actions button:hover,
+.profile-actions .cancel-btn:hover {
+    background: #e65100;
+}
+
+.profile-messages {
+    margin-bottom: 12px;
+}
+
+.profile-messages .msg {
+    padding: 8px 10px;
+    border-radius: 6px;
+    margin-bottom: 8px;
+    font-size: 14px;
+    border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.profile-messages .msg.success {
+    background: rgba(46, 204, 113, 0.18);
+    color: #b8ffd3;
+}
+
+.profile-messages .msg.error {
+    background: rgba(214, 48, 49, 0.18);
+    color: #ffb3b3;
+}
+
+/* ===== MOBILE RESPONSIVE ===== */
+@media (max-width: 480px) {
+    .form-box {
+        width: 90%;
+        padding: 20px;
+    }
+
+    .form-box img {
+        width: 100px;
+        height: 100px;
+    }
+
+    .edit-profile-box {
+        width: 90%;
+    }
+
+    .profile-actions {
+        flex-direction: column;
+    }
+
+    .profile-buttons {
+        gap: 4px;
+        width: 96%;
+    }
+
+    .profile-buttons .fees-button a,
+    .profile-buttons .fees-button a:link,
+    .profile-buttons .fees-button a:visited,
+    .profile-buttons .edit-button a,
+    .profile-buttons .edit-button a:link,
+    .profile-buttons .edit-button a:visited,
+    .profile-buttons .logout a,
+    .profile-buttons .logout a:link,
+    .profile-buttons .logout a:visited {
+        font-size: 10px;
+        padding: 0.65em 0.75em;
+        margin: 4px 2px;
+    }
+}

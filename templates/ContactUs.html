@@ -1,0 +1,77 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Contact Us | Joshi's First Step
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/ContactUs.css' %}">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="contact-page">
+
+  <h1>Contact Us</h1>
+  <p class="subtitle">
+    We’re always happy to connect with parents and guardians
+  </p>
+
+  <div class="contact-grid">
+
+    <a href="tel:+919988820977" class="contact-card">
+      <span class="icon">📞</span>
+      <h3>Call Us</h3>
+      <p>+91 99888 20977</p>
+    </a>
+
+    <a href="https://wa.me/qr/ZN5YNUPEULIIJ1" target="_blank" class="contact-card">
+      <span class="icon">
+        <i class="fa-brands fa-whatsapp"></i>
+      </span>
+      <h3>WhatsApp</h3>
+      <p>Chat with us</p>
+    </a>
+
+    <a href="mailto:pinkijoshi2015@gmail.com" class="contact-card">
+      <span class="icon">📧</span>
+      <h3>Email</h3>
+      <p>Contact Us on Email</p>
+    </a>
+
+    <a href="https://maps.app.goo.gl/G75vHsRtfbjMJ6JA8?g_st=ac" target="_blank" class="contact-card">
+      <span class="icon">📍</span>
+      <h3>Location</h3>
+      <p>View on Google Maps</p>
+      <span>FHRR+F6H Rajpura, Punjab</span>
+    </a>
+
+    <a href="https://www.instagram.com/joshi._firststepplayschool?utm_source=qr&igsh=Z3p1eTdubnBxcHdt" target="_blank" class="contact-card">
+      <span class="icon">
+        <i class="fa-brands fa-instagram"></i>
+      </span>
+      <h3>Instagram</h3>
+      <p>@joshi._firststepplayschool</p>
+    </a>
+
+    <a href="https://facebook.com/yourpage" target="_blank" class="contact-card">
+      <span class="icon">
+        <i class="fa-brands fa-facebook"></i>
+      </span>
+      <h3>Facebook</h3>
+      <p>Follow us</p>
+    </a>
+
+  </div>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}

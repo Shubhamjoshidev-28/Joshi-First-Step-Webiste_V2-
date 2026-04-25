@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Activities | Joshi's First Step
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/activities.css' %}">
+<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="gallery-hero">
+  <h1>Activities & Photo Gallery</h1>
+  <p>Memories captured from school activities</p>
+</section>
+
+<section class="gallery-grid" id="galleryGrid"></section>
+
+<div class="lightbox" id="lightbox" onclick="closeLightbox()">
+  <img id="lightbox-img">
+</div>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/activities.js' %}"></script>
+{% endblock %}

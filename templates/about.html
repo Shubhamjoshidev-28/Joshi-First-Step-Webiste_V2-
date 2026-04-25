@@ -1,0 +1,140 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+About | Joshi's First Step
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/about.css' %}">
+<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="about-page">
+ <div class="about-bg"></div>
+
+   <section class="about-hero">
+     <h4>About Our School</h4>
+     <p>Building foundations for lifelong learning and character development</p>
+   </section>
+
+   <section class="about-section">
+     <div class="about-card">
+       <h2>🎓 Our School</h2>
+       <p>
+         Established in 2024, Joshi’s First Step School is committed to providing
+         quality education that nurtures young minds and prepares them for a
+         successful future. With experienced teachers and a child-centric
+         approach, we create an environment where learning is enjoyable and effective.
+       </p>
+     </div>
+   </section>
+
+   <section class="about-section two-col">
+     <div class="info-card">
+       <h3>🎯 Our Mission</h3>
+       <p>
+         To provide holistic education that develops students academically,
+         emotionally, and socially while fostering curiosity, creativity, and confidence.
+       </p>
+     </div>
+
+     <div class="info-card">
+       <h3>👁️ Our Vision</h3>
+       <p>
+         To be recognized as a leading educational institution that empowers
+         students to become responsible, lifelong learners and positive contributors to society.
+       </p>
+     </div>
+   </section>
+
+   <section class="about-section">
+     <h2 class="section-title">💚 Our Core Values</h2>
+
+     <div class="values-grid">
+       <div class="value-card">
+         <h4>Integrity</h4>
+         <p>We uphold honesty and strong moral principles.</p>
+       </div>
+
+       <div class="value-card">
+         <h4>Excellence</h4>
+         <p>We strive for the highest standards in everything we do.</p>
+       </div>
+
+       <div class="value-card">
+         <h4>Respect</h4>
+         <p>We value diversity and treat everyone with dignity.</p>
+       </div>
+
+       <div class="value-card">
+         <h4>Innovation</h4>
+         <p>We encourage creativity and forward thinking.</p>
+       </div>
+
+       <div class="value-card">
+         <h4>Collaboration</h4>
+         <p>We work together to achieve common goals.</p>
+       </div>
+
+       <div class="value-card">
+         <h4>Responsibility</h4>
+         <p>We take ownership of our actions and commitments.</p>
+       </div>
+     </div>
+   </section>
+
+   <section class="about-section journey">
+    <div class="journey-layout">
+
+      <div class="journey-content">
+        <h2 class="section-title">📘 Our Journey</h2>
+
+        <div class="timeline">
+          <div class="timeline-item">
+            <span>August,2024</span>
+            <p>School established with 5 students and a vision for quality education.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>Dec,2024</span>
+            <p>Expanded facilities with a playarea for kids.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>Jun,2025</span>
+            <p>Introduced cartoon based learning methods on smart screens.</p>
+          </div>
+
+          <div class="timeline-item">
+            <span>Jan,2026</span>
+            <p>Serving 15+ students with core values and teaching excellence.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="teacher-card">
+        <img src="{% static 'assets/images/profile pic.png' %}" alt="Teacher Photo">
+
+        <h3>Mrs. Pinki Joshi</h3>
+        <p class="designation">Senior Primary Teacher</p>
+
+        <p class="bio">
+          15+ years of experience in early childhood education.  
+          Specialized in child psychology, creative learning, and parent engagement.
+        </p>
+      </div>
+
+    </div>
+  </section>
+
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}

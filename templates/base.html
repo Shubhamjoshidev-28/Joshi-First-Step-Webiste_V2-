@@ -1,0 +1,114 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}Joshi's First Step{% endblock %}</title>
+
+    <!-- COMMON CSS -->
+    <link rel="stylesheet" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" href="{% static 'css/footer.css' %}?v=20260426">
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+
+    {% block extra_css %}{% endblock %}
+</head>
+
+<body>
+
+<!-- ===== HEADER (NOW GLOBAL) ===== -->
+<header>
+    <div class="nav-wrapper">
+      <div class="nav">
+
+        <button class="menu-toggle" aria-label="Toggle navigation" type="button">
+          ☰
+        </button>
+
+        <div class="brand">
+          <img src="{% static 'assets/images/newlogo.png.png' %}" alt="School logo">
+          <span>JOSHI'S FIRST STEP</span>
+        </div>
+
+        <nav class="menu">
+          <a href="{% url 'home' %}">Home</a>
+          <a href="{% url 'about' %}">About</a>
+          <a href="{% url 'admission' %}">Admissions</a>
+          <a href="{% url 'activities' %}">Activities</a>
+          <a href="{% url 'contact' %}">Contact</a>
+          {% if request.session.user_id %}
+            <a href="{% url 'announcements' %}">Announcements</a>
+            <a href="{% url 'profile' %}" class="profile-circle-btn" title="My Profile" aria-label="My Profile">
+              {% if request.session.user_profile_pic %}
+                <img src="{{ request.session.user_profile_pic }}" alt="Profile picture">
+              {% else %}
+                <span>{{ request.session.user_name|default:'U'|slice:':1'|upper }}</span>
+              {% endif %}
+            </a>
+            <a href="{% url 'logout' %}">Logout</a>
+          {% else %}
+            <a href="{% url 'login' %}" class="nav-login-btn">Login</a>
+          {% endif %}
+          
+        </nav>
+
+      </div>
+    </div>
+</header>
+
+
+<!-- ===== MAIN CONTENT ===== -->
+<main class="page-content">
+  {% block content %}{% endblock %}
+</main>
+
+<!-- ===== FOOTER (NOW GLOBAL) ===== -->
+<footer class="site-footer">
+  <div class="site-footer-inner">
+    <div class="site-footer-grid">
+      <section class="site-footer-col">
+        <h4 class="site-footer-title">Our School</h4>
+        <p class="site-footer-text">Building strong foundations for a brighter future.</p>
+      </section>
+
+      <section class="site-footer-col">
+        <h4 class="site-footer-title">Contact</h4>
+        <p class="site-footer-text">+91 99888 20977</p>
+        <p class="site-footer-text">pinkijoshi2015@gmail.com</p>
+        <p class="site-footer-text">Contact This Website Developer<br>shubhamjoshidev28@gmail.com</p>
+      </section>
+
+      <section class="site-footer-col">
+        <h4 class="site-footer-title">Address</h4>
+        <p class="site-footer-text">#390, Bharat colony<br>Old Rajpura, Punjab</p>
+      </section>
+    </div>
+
+    <div class="site-footer-bottom">
+      &copy; 2026 Joshi's First Step School
+    </div>
+  </div>
+</footer>
+
+
+<div id="chatbot-widget" aria-live="polite">
+  <div id="chatbot-panel" class="chatbot-panel" role="dialog" aria-label="School Assistant">
+    <div class="chatbot-header">School Assistant</div>
+    <div id="chatbot-messages" class="chatbot-messages"></div>
+    <form id="chatbot-form" class="chatbot-form">
+      <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type your message..." autocomplete="off">
+      <button type="submit" class="chatbot-send">Send</button>
+    </form>
+  </div>
+  <button id="chatbot-toggle" class="chatbot-toggle" type="button" aria-label="Open chat">Ask Me</button>
+</div>
+
+
+<!-- COMMON JS -->
+<script src="{% static 'js/menu.js' %}"></script>
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+{% block extra_js %}{% endblock %}
+
+</body>
+</html>

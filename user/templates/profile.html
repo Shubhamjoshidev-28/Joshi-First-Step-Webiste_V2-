@@ -1,0 +1,58 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Profile | Joshi’s First Step {% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/profile.css' %}" rel='stylesheet' >
+{% endblock %}
+
+{% block content %}
+<div class="form-box">
+
+    <h2>My Profile</h2>
+
+     {% comment %} profile pic {% endcomment %}
+    {% if userinfo.Profile_pic %}
+        <img src="{{ userinfo.Profile_pic.url }}" width="120">
+     {% else %}
+        <img src="{% static 'assets/images/newlogo.png.png' %}" width="120">
+    {% endif %}
+
+    {% comment %} User info {% endcomment %}
+    <p><strong>Name:</strong> {{ userinfo.Name }}</p>
+    <p><strong>Class:</strong> {{ userinfo.Class }}</p>
+    <p><strong>Father_Name:</strong> {{ userinfo.Father_Name }}</p>
+    <p><strong>Mother_Name:</strong> {{ userinfo.Mother_Name }}</p>
+    <p><strong>Phone_No:</strong> {{ userinfo.Phone_no }}</p>
+
+</div>
+
+<div class="profile-buttons">
+    <div class = 'fees-button'>
+        <a href="{% url 'fees' %}">Pay Fees</a>
+    </div>
+
+    <div class = 'edit-button'>
+        <a href="{% url 'edit_profile' %}">Edit Profile</a>
+    </div>
+
+    <div class = 'logout'>
+        <a href="{% url 'logout' %}">Logout</a>
+    </div>
+</div>
+<div id="chatbot-widget" aria-live="polite">
+    <div id="chatbot-panel" class="chatbot-panel" role="dialog" aria-label="School Assistant">
+        <div class="chatbot-header">School Assistant</div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <form id="chatbot-form" class="chatbot-form">
+            <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type your message..." autocomplete="off">
+            <button type="submit" class="chatbot-send">Send</button>
+        </form>
+    </div>
+    <button id="chatbot-toggle" class="chatbot-toggle" type="button" aria-label="Open chat">Ask Me</button>
+</div>
+
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+{% endblock %}

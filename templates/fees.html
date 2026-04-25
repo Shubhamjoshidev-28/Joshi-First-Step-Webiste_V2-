@@ -1,0 +1,89 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Fees | Joshi’s First Step
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/fees.css' %}?v=20260423">
+<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+{% endblock %}
+
+
+{% block content %}
+
+<section class="page-header">
+  <h1>Fee Payment</h1>
+  <p>Pay your school fees conveniently</p>
+</section>
+
+<section class="feeform-wrap">
+  <a class="feeform-button" 
+     href="https://forms.gle/e1wHAWgAogf1w6Gs7" 
+     target="_blank" 
+     rel="noopener noreferrer">
+     Proceed to pay
+  </a>
+</section>
+
+<section class="border-box">
+  <h3>Additional Fees</h3>
+
+  <div class="fee-row">
+    <span>Admission Fee (One-time)</span>
+    <span>₹1,000</span>
+  </div>
+
+  <div class="fee-row">
+    <span>Books & Stationery</span>
+    <span>&#8377;0</span>
+  </div>
+
+  <div class="fee-row">
+    <span>Uniform Set</span>
+    <span>&#8377;0</span>
+  </div>
+</section>
+
+<section class="table-box">
+  <h3>Fee Structure</h3>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Grade</th>
+        <th>Monthly Fee</th>
+        <th>Annual Fee</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr>
+        <td>PlayClass</td>
+        <td>₹1,000</td>
+        <td>₹12,000</td>
+      </tr>
+      <tr>
+        <td>Pre-Nursery</td>
+        <td>₹1,000</td>
+        <td>₹12,000</td>
+      </tr>
+      <tr>
+        <td>Nursery</td>
+        <td>₹1,000</td>
+        <td>₹12,000</td>
+      </tr>
+      <tr>
+        <td>KG</td>
+        <td>₹1,000</td>
+        <td>₹12,000</td>
+      </tr>
+    </tbody>
+  </table>
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+{% endblock %}

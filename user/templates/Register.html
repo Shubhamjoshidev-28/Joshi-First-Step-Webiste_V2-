@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register - Joshi's First Step</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background: rgba(20, 20, 20, 0.877);
+            algin-items: left;
+
+        }
+
+        /* NAVBAR (same as your site) */
+        .navbar {
+            background: #e65100;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* CENTER FORM */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+        }
+
+        .form-box {
+            background: #1b1b1ba0;
+            margin-top: 105px;
+            padding: 20px;
+            width: 280px;
+            
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e65100;
+        }
+
+        .form-box label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .form-box input {
+            width: 95%;
+            algin-items: center;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #d4d1d1;
+            
+        }
+
+        .form-box button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background: #e65100;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-box button:hover {
+            background: #bf360c;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .login-link a {
+            color: #e65100;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .form-errors {
+            margin: 10px 0;
+            padding: 8px;
+            border-radius: 6px;
+            background: rgba(255, 120, 120, 0.15);
+            border: 1px solid rgba(255, 120, 120, 0.35);
+            color: #ffdada;
+            font-size: 13px;
+        }
+
+        .field-error {
+            margin-top: 4px;
+            color: #ffb3b3;
+            font-size: 12px;
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>JOSHI'S FIRST STEP</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+    </div>
+</div>
+
+<!-- FORM -->
+<div class="container">
+    <div class="form-box">
+
+        <h2>Register</h2>
+
+        <form method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+
+            {% if form.non_field_errors %}
+                <div class="form-errors">
+                    {% for err in form.non_field_errors %}
+                        <div>{{ err }}</div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+
+            <label>Name</label>
+            {{ form.Name }}
+            {% for err in form.Name.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>Class</label>
+            {{ form.Class }}
+            {% for err in form.Class.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>FatherName</label>
+            {{ form.Father_Name }}
+            {% for err in form.Father_Name.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>MotherName</label>
+            {{ form.Mother_Name }}
+            {% for err in form.Mother_Name.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>Email</label>
+            {{ form.email }}
+            {% for err in form.email.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>PhoneNo</label>
+            {{ form.Phone_no }}
+            {% for err in form.Phone_no.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>password</label>
+            {{ form.password }}
+            {% for err in form.password.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            <label>Upload Profile Picture</label>
+            {{ form.Profile_pic }}
+            {% for err in form.Profile_pic.errors %}<div class="field-error">{{ err }}</div>{% endfor %}
+
+            
+
+            <button type="submit">Register</button>
+        </form>
+
+        <div class="login-link">
+            Already have an account? <a href="{% url 'login' %}">Login</a>
+        </div>
+
+    </div>
+</div>
+
+<div id="chatbot-widget" aria-live="polite">
+    <div id="chatbot-panel" class="chatbot-panel" role="dialog" aria-label="School Assistant">
+        <div class="chatbot-header">School Assistant</div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <form id="chatbot-form" class="chatbot-form">
+            <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type your message..." autocomplete="off">
+            <button type="submit" class="chatbot-send">Send</button>
+        </form>
+    </div>
+    <button id="chatbot-toggle" class="chatbot-toggle" type="button" aria-label="Open chat">Ask Me</button>
+</div>
+
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+</body>
+</html>

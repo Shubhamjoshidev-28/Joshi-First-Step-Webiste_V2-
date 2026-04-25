@@ -1,0 +1,59 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}Edit Profile | Joshi’s First Step{% endblock %}
+
+{% block extra_css %}
+<link href="{% static 'css/profile.css' %}" rel='stylesheet'>
+{% endblock %}
+
+{% block content %}
+<div class="form-box edit-profile-box">
+    <h2>Edit Profile</h2>
+
+    {% if messages %}
+    <div class="profile-messages">
+        {% for message in messages %}
+        <div class="msg {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+        {% endfor %}
+    </div>
+    {% endif %}
+
+    <form method="POST" enctype="multipart/form-data" class="profile-form">
+        {% csrf_token %}
+
+        <label>Name</label>
+        {{ form.Name }}
+        {{ form.Name.errors }}
+
+        <label>Class</label>
+        {{ form.Class }}
+        {{ form.Class.errors }}
+
+        <label>Father Name</label>
+        {{ form.Father_Name }}
+        {{ form.Father_Name.errors }}
+
+        <label>Mother Name</label>
+        {{ form.Mother_Name }}
+        {{ form.Mother_Name.errors }}
+
+        <label>Phone No</label>
+        {{ form.Phone_no }}
+        {{ form.Phone_no.errors }}
+
+        <label>Email</label>
+        {{ form.email }}
+        {{ form.email.errors }}
+
+        <label>Profile Picture</label>
+        {{ form.Profile_pic }}
+        {{ form.Profile_pic.errors }}
+
+        <div class="profile-actions">
+            <button type="submit">Save Changes</button>
+            <a href="{% url 'profile' %}" class="cancel-btn">Cancel</a>
+        </div>
+    </form>
+</div>
+{% endblock %}

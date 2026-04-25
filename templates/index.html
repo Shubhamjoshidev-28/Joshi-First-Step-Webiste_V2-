@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block title %}
+Joshi’s First Step School
+{% endblock %}
+
+{% block extra_css %}
+<link rel="stylesheet" href="{% static 'css/index.css' %}">
+<link rel="icon" href="{% static 'assets/images/favicon.ico' %}" type="image/x-icon">
+{% endblock %}
+
+
+{% block content %}
+
+<!-- SLIDER -->
+<section class="slider">
+  <div class="slide active">
+    <img src="" alt="">
+    <div class="slide-text">
+      <h1></h1>
+      <p></p>
+    </div>
+  </div>
+
+  <button class="arrow prev">&#10094;</button>
+  <button class="arrow next">&#10095;</button>
+</section>
+
+<!-- CARDS -->
+<section class="cards">
+  <div class="card">
+    <h3>Experienced Teachers</h3>
+    <p>More than 15+ years of teaching experience with child-friendly methods.</p>
+  </div>
+
+  <div class="card">
+    <h3>Personalized Teaching</h3>
+    <p>Individual attention for every student to ensure proper growth.</p>
+  </div>
+
+  <div class="card">
+    <h3>Prime Location</h3>
+    <p>Located in a safe and accessible area with easy transport.</p>
+  </div>
+</section>
+
+{% endblock %}
+
+
+{% block extra_js %}
+<script src="{% static 'js/home.js' %}"></script>
+{% endblock %}

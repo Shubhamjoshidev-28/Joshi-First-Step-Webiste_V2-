@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Joshi's First Step</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'css/chatbot.css' %}">
+
+    <style>
+        body {
+            margin: 0;
+            font-family: 'Times New Roman', Times, serif;
+            background: rgba(20, 20, 20, 0.877);
+            algin-items: left;
+
+        }
+
+        /* NAVBAR (same as your site) */
+        .navbar {
+            background: #e65100;
+            color: white;
+            padding: 15px 40px;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .navbar h2 {
+            margin: 0;
+            font-size: 16px;
+        }
+
+        .nav-links a {
+            color: white;
+            margin-right: 20px;
+            text-decoration: none;
+            font-weight: bold;
+            
+        }
+
+        .nav-links a:hover {
+            text-decoration: underline;
+        }
+
+        /* CENTER FORM */
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: calc(100vh - 80px);
+        }
+
+        .form-box {
+            background: #1b1b1ba0;
+            margin-top: 35px;
+            padding: 20px;
+            width: 280px;
+            border-radius: 20px;
+            box-shadow: 0 5px 20px rgba(0,0,0,0.2);
+        }
+
+        .form-box h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #e65100;
+        }
+
+        .form-box label {
+            display: block;
+            margin-top: 10px;
+            font-weight: bold;
+            color: #fff;
+        }
+
+        .form-box input {
+            width: 95%;
+            algin-items: center;
+            padding: 8px;
+            margin-top: 5px;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            background: #d4d1d1;
+            
+        }
+
+        .form-box button {
+            width: 100%;
+            margin-top: 20px;
+            padding: 10px;
+            background: #e65100;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+        }
+
+        .form-box button:hover {
+            background: #bf360c;
+        }
+
+        .login-link {
+            text-align: center;
+            margin-top: 10px;
+            color: #fff;
+        }
+
+        .login-link a {
+            color: #e65100;
+            text-decoration: none;
+        }
+
+        .login-link a:hover {
+            text-decoration: underline;
+        }
+
+        .messages {
+            margin-bottom: 10px;
+        }
+
+        .msg {
+            padding: 8px 10px;
+            border-radius: 6px;
+            margin-bottom: 8px;
+            font-size: 14px;
+        }
+
+        .msg.error {
+            background: rgba(214, 48, 49, 0.2);
+            color: #ffb3b3;
+            border: 1px solid rgba(214, 48, 49, 0.5);
+        }
+
+        .msg.success {
+            background: rgba(46, 204, 113, 0.2);
+            color: #b8ffd3;
+            border: 1px solid rgba(46, 204, 113, 0.5);
+        }
+
+    </style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<div class="navbar">
+    <h2>JOSHI'S FIRST STEP</h2>
+    <div class="nav-links">
+        <a href="/">Home</a>
+    </div>
+</div>
+
+<!-- FORM -->
+<div class="container">
+    <div class="form-box">
+
+        <h2>Login</h2>
+
+        {% if messages %}
+        <div class="messages">
+            {% for message in messages %}
+            <div class="msg {% if message.tags %}{{ message.tags }}{% endif %}">{{ message }}</div>
+            {% endfor %}
+        </div>
+        {% endif %}
+
+        <form method="POST">
+            {% csrf_token %}
+
+            <label>PhoneNo</label>
+            {{ form.Phone_no }}
+
+            <label>password</label>
+            {{ form.password }}
+
+            
+
+            <button type="submit">Login</button>
+        </form>
+
+        <div class="login-link">
+            Create Account <a href="{% url 'register' %}">Register</a>
+        </div>
+
+    </div>
+</div>
+
+<div id="chatbot-widget" aria-live="polite">
+    <div id="chatbot-panel" class="chatbot-panel" role="dialog" aria-label="School Assistant">
+        <div class="chatbot-header">School Assistant</div>
+        <div id="chatbot-messages" class="chatbot-messages"></div>
+        <form id="chatbot-form" class="chatbot-form">
+            <input id="chatbot-input" class="chatbot-input" type="text" placeholder="Type your message..." autocomplete="off">
+            <button type="submit" class="chatbot-send">Send</button>
+        </form>
+    </div>
+    <button id="chatbot-toggle" class="chatbot-toggle" type="button" aria-label="Open chat">Ask Me</button>
+</div>
+
+<script src="{% static 'js/chatbot.js' %}"></script>
+
+</body>
+</html>

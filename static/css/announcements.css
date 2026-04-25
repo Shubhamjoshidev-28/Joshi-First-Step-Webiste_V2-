@@ -1,0 +1,39 @@
+body{
+  background: rgb(29, 29, 29);
+}
+
+*{
+  margin: 0;
+}
+
+.announcements-list {
+  max-width: 900px;
+  margin: 40px auto;
+}
+
+.announcement-card {
+  display: flex;
+  gap: 15px;
+  padding: 20px;
+  margin-bottom: 15px;
+  background: #2d2824b8;
+  border-radius: 14px;
+}
+
+.icon {
+  font-size: 24px;
+}
+
+.date {
+  color: #0a84ff;
+  font-size: 14px;
+}
+
+h4 {
+  margin: 6px 0;
+  color: #fff;
+}
+
+p {
+  color: #ddd;
+}
