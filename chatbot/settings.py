@@ -27,11 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-dev-key-change-
 # Default to True locally; set DEBUG=False in production environment variables.
 DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = [
-    host.strip()
-    for host in os.environ.get('ALLOWED_HOSTS', '.vercel.app,127.0.0.1,localhost').split(',')
-    if host.strip()
-]
+ALLOWED_HOSTS = ['144.24.117.61','joshifirststep.page']
 
 
 # Application definition
