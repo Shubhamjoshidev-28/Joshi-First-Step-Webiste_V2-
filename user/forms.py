@@ -46,15 +46,9 @@ class ProfileForm(forms.ModelForm):
         ]
 
 
-class LoginForm(forms.ModelForm):
-    class Meta:
-        model = UserInfo
-        fields = [
-            'Phone_no',
-            'password',
-        ]
-    
-    def __init__(self, *args , **kwargs):
-        super().__init__(*args,**kwargs)
-        self.fields['Phone_no'].required = True
-        self.fields['password'].required = True
+class LoginForm(forms.Form):
+    Phone_no = forms.CharField(max_length=10, required=True)
+    password = forms.CharField(widget=forms.PasswordInput(), required=True)
+
+    def clean_Phone_no(self):
+        return (self.cleaned_data.get('Phone_no') or '').strip()

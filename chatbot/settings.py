@@ -27,7 +27,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY', 'django-insecure-local-dev-key-change-
 # Default to True locally; set DEBUG=False in production environment variables.
 DEBUG = os.environ.get('DEBUG', 'True').lower() == 'true'
 
-ALLOWED_HOSTS = ['144.24.117.61','joshifirststep.page']
+ALLOWED_HOSTS = ['127.0.0.1','144.24.117.61','joshifirststep.page']
 
 
 # Application definition
@@ -137,6 +137,6 @@ EMAIL_BACKEND = 'django.core.mail.backends.smtp.EmailBackend'
 EMAIL_HOST = 'smtp.gmail.com'
 EMAIL_PORT = 587
 EMAIL_USE_TLS = True
-EMAIL_HOST_USER = 'shubhamjoshidev28@gmail.com'
-EMAIL_HOST_PASSWORD = 'iapd syfu cbtk meir'
+EMAIL_HOST_USER = 'joshifirststep@gmail.com'
+EMAIL_HOST_PASSWORD = 'ejog vrpg wldc suxm'
 DEFAULT_FROM_EMAIL = EMAIL_HOST_USER

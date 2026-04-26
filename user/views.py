@@ -52,6 +52,8 @@ def login(request):
                 return redirect('home')
 
             messages.error(request, 'Invalid phone number or password')
+        else:
+            messages.error(request, 'Please enter a valid phone number and password')
     else:
         form = LoginForm()
 

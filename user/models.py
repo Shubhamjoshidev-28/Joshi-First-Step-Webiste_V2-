@@ -7,7 +7,7 @@ class UserInfo(models.Model):
 
     Father_Name = models.CharField(max_length=100)
     Mother_Name = models.CharField(max_length=100)
-    Phone_no = models.CharField(max_length=10)
+    Phone_no = models.CharField(max_length=10 , unique=True)
     email = models.EmailField(unique=True, null=True, blank=True)
     Profile_pic=models.ImageField(upload_to='profiles/',blank=True,null=True)
 
