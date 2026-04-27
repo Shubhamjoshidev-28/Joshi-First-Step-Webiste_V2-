@@ -1,7 +1,7 @@
 venv
-staticfiles
-media
+staticfiles/
 pass.txt
 db.sqlite3
-__pycache__
+__pycache__/
+*.pyc
 .git 
